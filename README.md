@@ -10,35 +10,29 @@ This project is a simple plagiarism checker that uses ElasticSearch for text ind
 - `Models/Document.cs`: Model representing the document stored in ElasticSearch.
 - `Service/PlagiarismService.cs`: Implementation of the plagiarism checking service.
 
+### Prerequisites
+- **Docker**: Ensure Docker is installed on your machine. You can download it from [Docker's official site](https://www.docker.com/get-started).
+- **Install .NET Core SDK**:
+   - Download and install the .NET Core SDK from [Microsoft's official site](https://dotnet.microsoft.com/download).
 ### Setup Instructions
 
-1. **Install .NET Core SDK**:
-   - Download and install the .NET Core SDK from [Microsoft's official site](https://dotnet.microsoft.com/download).
-
-2. **Install and Run ElasticSearch**:
-   - Download ElasticSearch from the [official Elastic website](https://www.elastic.co/downloads/elasticsearch).
-   - Extract the downloaded archive and navigate to the ElasticSearch directory.
-   - Run ElasticSearch:
-     - On Windows: `.in\elasticsearch.bat`
-     - On macOS/Linux: `./bin/elasticsearch`
-   - By default, ElasticSearch runs on `http://localhost:9200`.
-
-3. **Clone the Repository**:
+1. **Clone the Repository**:
    - Clone this repository to your local machine.
 
-4. **Restore Dependencies and Build the Project**:
-   - Navigate to the project directory and run:
+2. **Run Docker Compose**:
+   - Ensure Docker is installed and running on your machine
+   - Navigate to the project directory where the `docker-compose.yml` file is located.
+   - Run the following command to start the required services:
      ```sh
-     dotnet restore
-     dotnet build
+     docker-compose up
      ```
 
-5. **Run the Application**:
+3. **Run the Application**:
    - In the project directory, run:
      ```sh
-     dotnet run
+     PlagiarismChecker run
      ```
-   - The application will start and listen on `http://localhost:5000`.
+   - The application will start and listen on `https://localhost:7015/swagger/index.html`.
 
 ### API Endpoints
 
