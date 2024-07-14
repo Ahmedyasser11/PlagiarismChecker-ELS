@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlagiarismChecker", "PlagiarismChecker\PlagiarismChecker.csproj", "{8894EAA7-E6E0-4133-ABBA-03C6713E861F}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4056DF26-3948-4EF0-89E3-13659AB7529F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8894EAA7-E6E0-4133-ABBA-03C6713E861F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8894EAA7-E6E0-4133-ABBA-03C6713E861F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8894EAA7-E6E0-4133-ABBA-03C6713E861F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4056DF26-3948-4EF0-89E3-13659AB7529F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4056DF26-3948-4EF0-89E3-13659AB7529F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4056DF26-3948-4EF0-89E3-13659AB7529F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4056DF26-3948-4EF0-89E3-13659AB7529F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
