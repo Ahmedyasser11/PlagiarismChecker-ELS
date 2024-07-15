@@ -22,17 +22,19 @@ This project is a simple plagiarism checker that uses ElasticSearch for text ind
 2. **Run Docker Compose**:
    - Ensure Docker is installed and running on your machine
    - Navigate to the project directory where the `docker-compose.yml` file is located.
+   - open cmd in your directory
    - Run the following command to start the required services:
      ```sh
      docker-compose up
      ```
 
 3. **Run the Application**:
+   - Open new cmd in the Project directory 
    - In the project directory, run:
      ```sh
-     PlagiarismChecker run
+     dotnet run
      ```
-   - The application will start and listen on `https://localhost:7015/swagger/index.html`.
+   - The application will start and listen on `http://localhost:5280/swagger/index.html`.
 
 ### API Endpoints
 
