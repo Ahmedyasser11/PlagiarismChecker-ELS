@@ -22,7 +22,7 @@ This project is a simple plagiarism checker that uses ElasticSearch for text ind
 2. **Run Docker Compose**:
    - Ensure Docker is installed and running on your machine
    - Navigate to the project directory where the `docker-compose.yml` file is located.
-   - open cmd in your directory
+   - open cmd in your directory and dont close it.
    - Run the following command to start the required services:
      ```sh
      docker-compose up
