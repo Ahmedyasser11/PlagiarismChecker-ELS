@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Nest;
 using PlagiarismChecker.Interface;
 using PlagiarismChecker.Models;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace PlagiarismChecker.Controllers
 {
@@ -26,13 +30,17 @@ namespace PlagiarismChecker.Controllers
         }
 
         [HttpPost("GetPlagiarismPercentage")]
-        public  IActionResult GetPlagiarismPercentage(Content content)
+        public async Task<IActionResult> GetPlagiarismPercentage([FromBody] Content content)
         {
-            _plagiarismService.EnsureIndex(_elasticClient);
-            _plagiarismService.IndexText(_elasticClient, "Text1", content.s1);
-            _plagiarismService.IndexText(_elasticClient, "Text2", content.s2);
-            var matchPercentage = _plagiarismService.CheckPlagiarism(_elasticClient, "Text1", "Text2");
-            return Ok($"Matching Percentage: {matchPercentage}%");
+            await _plagiarismService.EnsureIndex(_elasticClient);
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            await _plagiarismService.IndexText(_elasticClient, "Text1", content.s1);
+            await _plagiarismService.IndexText(_elasticClient, "Text2", content.s2);
+            var matchPercentage =await _plagiarismService.CheckPlagiarism(_elasticClient, "Text1", "Text2");
+            stopwatch.Stop();
+            TimeSpan timeTaken = stopwatch.Elapsed;
+            return Ok($"Time taken: {timeTaken.TotalMilliseconds} milliseconds\nMatching Percentage: {matchPercentage}%");
         }
     }
 }
